@@ -30,17 +30,6 @@ class Budget:
 # userInput = ""
 # userAmount = input("Enter amount to withdraw: ")
 
-def withdrawAmount(self, amount):
-
-
-
-    clothing.withdraw(userAmount)
-
-    entertainment.withdraw(userAmount)
-
-    pets.withdraw(userAmount)
-
-
 # menu()
 
 # setting the balance for each category
