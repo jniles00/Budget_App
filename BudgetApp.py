@@ -11,15 +11,6 @@ class Budget:
     def deposit(self, amount):
         self.balance += amount
 
-# def menu():
-#     menuInput = input("Enter (F)ood, \n (C)lothing, \n (E)ntertainment, \n (P)ets \n")
-#     if menuInput == 'f' or 'F':
-#         userAmount = input(float("Enter amount to withdraw: "))
-        
-#     return userAmount
-
-
-
     # #if userInput == 'w' or 'W':
     #     print("Which category would you like to withdraw from?: \n '\Food', \n 'Clothing' \n 'Entertainment', \n 'Pets' \n")
     #     if userInput == "food":
@@ -27,8 +18,6 @@ class Budget:
     #         userAmount = input("Enter amount to withdraw: ")
     #         userAmount = int(userAmount)    
 
-# userInput = ""
-# userAmount = input("Enter amount to withdraw: ")
 
 # menu()
 
@@ -40,34 +29,40 @@ pets = Budget(12)
 
 userInput = ''
 
+def withdrawal(strvar):
+    userAmount = input("Enter amount to withdraw: ")
+    userAmount = float(userAmount)
+    strvar.withdraw(userAmount)
+    return userAmount
+
+
 while True:
     menuInput = input("Enter (F)ood, \n (C)lothing, \n (E)ntertainment, \n (P)ets,\n (Q)uit \n" )
     if menuInput == 'f':
-        userAmount = input("Enter amount to withdraw: ")
-        userAmount = float(userAmount)
-        food.withdraw(userAmount)
-        print("Food balance:", food.balance)
+        print("Current food balance: ", food.balance)
+        withdrawal(food)
+        print("Remaining food balance:", food.balance)
         continue
     elif menuInput == 'c':
-        userAmount = input("Enter amount to withdraw: ")
-        userAmount = float(userAmount)
-        clothing.withdraw(userAmount)
-        print("Clothing balance:", food.balance)
+        print("Current clothing balance: ", clothing.balance)
+        withdrawal(clothing)
+        print("Remaining clothing balance:", clothing.balance)
         continue
     elif menuInput == 'e':
-        userAmount = input("Enter amount to withdraw: ")
-        userAmount = float(userAmount)
-        entertainment.withdraw(userAmount)
-        print("Entertainment balance:", food.balance)
+        print("Current entertainment balance: ", entertainment.balance)
+        withdrawal(entertainment)
+        print("Remaining entertainment balance:", entertainment.balance)
         continue
     elif menuInput == 'p':
-        userAmount = input("Enter amount to withdraw: ")
-        userAmount = float(userAmount)
-        pets.withdraw(userAmount)
-        print("Pets balance:", food.balance)
+        print("Current pet balance: ", pets.balance)
+        withdrawal(pets)
+        print("Remaining pet balance:", pets.balance)
         continue
     elif menuInput == "q":
         break
+
+
+    pass
 
 print("Outside while loop")
 
